@@ -1,9 +1,17 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
     const {signIn , signInGoogle} = useContext(AuthContext);
+
+    const navigate = useNavigate();
+
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
+    console.log(location);
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -15,6 +23,7 @@ const Login = () => {
         .then(result =>{
             const loggedUser = result.user;
             console.log(loggedUser);
+            navigate(from ,{replace:true});
         })
         .catch(error =>{
             console.error(error);
@@ -26,6 +35,7 @@ const Login = () => {
     .then(result =>{
         const loggedUser = result.user;
         console.log(loggedUser);
+        navigate(from ,{replace:true});
     })
     .catch(error =>{
         console.error(error);
@@ -44,7 +54,7 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="w-[25%] mt-40 relative shadow-2xl rounded-md p-7  mx-auto">
+      <div className="w-[25%] mt-40  relative shadow-2xl rounded-md p-7  mx-auto">
         <form onSubmit={handleLogin}>
           <div>
             <label

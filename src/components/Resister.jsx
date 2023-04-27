@@ -27,7 +27,7 @@ const Resister = () => {
     
 
     return (
-        <>
+        <div className=' dark:text-gray-100 dark:bg-slate-900 duration-100'>
       <div className="flex items-center justify-center">
         <div className="relative">
           <div className="  absolute rounded-full top-72 left-4 w-72 h-72 bg-lime-500 filter blur-2xl mix-blend-multiply opacity-75 animate-blob"></div>
@@ -137,7 +137,7 @@ const Resister = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
     );
 };
 

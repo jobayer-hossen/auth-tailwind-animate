@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
-const Header = () => {
+const Header = ({darkMode}) => {
   const {user , logOut} = useContext(AuthContext);
 
   const handleSignOut =()=>{
@@ -31,8 +31,9 @@ const Header = () => {
           </> : <>
           <Link to='/login'>
           <button
+
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white dark-color bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white "
             >
               Login
             </button>
@@ -40,10 +41,11 @@ const Header = () => {
           </> }
           <div className="flex md:order-2">
             <button
+            onClick={()=>darkMode()}
               type="button"
               className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Get started
+              Dark Mode
             </button>
             <button
               data-collapse-toggle="navbar-sticky"
@@ -97,6 +99,14 @@ const Header = () => {
                 Order
               </Link>
             </li>}
+            <li>
+                <Link
+                  to="/profile"
+                  className="block py-2 pl-3 pr-4 text-gray-900 rounded  md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  Profile
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/resister"

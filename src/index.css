@@ -3,6 +3,26 @@
 @tailwind utilities;
 
 
+@layer components{
+    .light-theme {
+      @apply bg-slate-50 text-slate-950
+       
+    }
+    .dark-theme{
+       @apply bg-slate-500 text-white
+    }
+  }
+
+/* .light-theme{
+        background-color: white;
+        color: black; 
+    
+} */
+/* .dark-theme{
+    background-color: rgb(130, 120, 120);
+    color: aliceblue;
+} */
+
 
 @layer utilities {
     animation-delay-2s{
@@ -17,6 +37,8 @@
     
     
 }
+
+
 
 
 

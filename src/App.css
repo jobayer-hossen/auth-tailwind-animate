@@ -1,0 +1,14 @@
+.animation {
+    animation: upDown 2s linear infinite;
+  }
+  @keyframes upDown {
+      0% {
+          transform: translateX(-40px);
+      }
+      50% {
+          transform: translateY(40px);
+      }
+      100% {
+          transform: translateX(-40px);
+      }
+  }
